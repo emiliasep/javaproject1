@@ -1,0 +1,44 @@
+body {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: #ffffff;
+    background-color: #373737;
+    margin: 20px;
+}
+
+h1 {
+    color: #488a20;
+}
+
+input {
+    padding: 5px 10px;
+    margin: 3px 0;
+    box-sizing: border-box;
+}
+
+select {
+    padding: 5px 10px;
+    margin: 3px 0;
+    box-sizing: border-box;
+}
+
+
+input[type=button], input[type=submit], input[type=reset] {
+    background-color: #488a20;
+    border: none;
+    color: white;
+    padding: 10px 30px;
+    margin: 4px 2px;
+}
+
+button  {
+    background-color: #488a20;
+    border: none;
+    color: white;
+    padding: 10px 30px;
+    margin: 4px 2px;
+}
+
+#sessionList {
+    list-style-type: square;
+
+}
