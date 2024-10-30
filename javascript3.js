@@ -1,3 +1,5 @@
+
+
 function validateNameForm() {
     var newName = document.forms["nameForm"]["fname"].value;
     if (newName == null || newName === "") {
@@ -10,6 +12,7 @@ function validateNameForm() {
     return false;
 }
 
+// showing comment box after ticking
 
 function showExtraFields() {
     const extraFieldset = document.getElementById('extraFields');
@@ -24,9 +27,12 @@ function showExtraFields() {
     
 }
 
+
 document.addEventListener('DOMContentLoaded', function() {
-    let totalHours = 0;
-    let studyData = JSON.parse(localStorage.getItem('studyData')) || [];
+    let totalHours = 0; 
+    let studyData = JSON.parse(localStorage.getItem('studyData')) || [];  
+
+    //clearing data from local store and page
 
     document.querySelector('.cleardata button').addEventListener('click', clearData);
 
@@ -37,6 +43,8 @@ document.addEventListener('DOMContentLoaded', function() {
         
         document.getElementById('sessionList').innerHTML = '';
         document.getElementById('totalHours').textContent = "0 hour(s)";
+        // Clear the subject summary
+        updateSummary();
     }
     
 
@@ -48,12 +56,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const subject = document.getElementById('subject').value;
         const description = document.getElementById('description').value;
 
-        // needs fixing!
-        // if (!date || !time || duration <= 0 || !subject) {
-            //document.forms.StudyForm.date.style.borderColor = "red";
-           // document.getElementById('feedback').innerHTML = "*Please fill in"
-          // return false;
-        //}
+
 
         const studySession = {
             date,
@@ -71,9 +74,18 @@ document.addEventListener('DOMContentLoaded', function() {
 
         updateStudySessions();
         updateSummary();
+    
+
+        // Clear input fields
+        document.getElementById('date').value = '';
+        document.getElementById('time').value = '';
+        document.getElementById('duration').value = '';
+        document.getElementById('subject').value = '';
+        document.getElementById('description').value = '';
     }
 
 
+    // loads saved data from local storage and updates summary and study sessions
     function loadSavedData() {
         totalHours = 0;
         studyData.forEach(session => {

@@ -3,10 +3,21 @@ body {
     color: #ffffff;
     background-color: #373737;
     margin: 20px;
+    padding: 10px;
+}
+
+.main {
+    width: 80%;
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: left;
 }
 
 h1 {
     color: #488a20;
+    text-align: center;
+    background-color: #242424;
+
 }
 
 input {
@@ -28,6 +39,8 @@ input[type=button], input[type=submit], input[type=reset] {
     color: white;
     padding: 10px 30px;
     margin: 4px 2px;
+    text-align: center;
+    
 }
 
 button  {
@@ -36,6 +49,7 @@ button  {
     color: white;
     padding: 10px 30px;
     margin: 4px 2px;
+    text-align: center;
 }
 
 #sessionList {
